@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="wallstreetbetsViewModel"
+            type="com.dummy.android.ui.main.stores.DummyStoresViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/elements_margin_medium"
+        tools:context=".ui.main.stores.DummyStoresFragment">
+
+        <include
+            android:id="@+id/lt_under_construction"
+            layout="@layout/layout_under_construction"
+            app:layout_constraintBottom_toTopOf="@+id/lt_ads"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:underConstructionDesc="@{wallstreetbetsViewModel.underConstructionText}" />
+
+        <include
+            android:id="@+id/lt_ads"
+            layout="@layout/layout_ads_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:viewModel="@{wallstreetbetsViewModel}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

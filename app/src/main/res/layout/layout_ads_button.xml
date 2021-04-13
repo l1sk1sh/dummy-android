@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dummy.android.ui.main.BaseViewModel" />
+    </data>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_ads"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ads_button_height"
+        android:background="@drawable/ads_button_background"
+        android:onClick="@{() -> viewModel.onAdsButtonClicked()}"
+        android:text="@string/ads"
+        android:textAppearance="?textAppearanceHeadline6"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:showIn="@layout/fragment_dummy_socials" />
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal_300">#FF35c6a7</color> <!-- primaryColor -->
+    <color name="teal_200">#FF72fad8</color> <!-- primaryLightColor -->
+    <!-- primaryDarkColor -->
+    <color name="purple_400">#FFab51e6</color> <!-- secondaryColor -->
+    <color name="purple_200">#FFe082ff</color> <!-- secondaryLightColor -->
+    <!-- secondaryDarkColor -->
+    <color name="blue_200">#FF00e5ff</color> <!-- colorAccent -->
+</resources>

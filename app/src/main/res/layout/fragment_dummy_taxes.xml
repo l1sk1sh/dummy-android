@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dummy.android.ui.main.taxes.DummyTaxesViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.taxes.DummyTaxesFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/elements_margin_medium">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clt_search_dummy_taxes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?colorPrimary"
+                android:padding="@dimen/elements_margin_small"
+                app:layout_constraintBottom_toTopOf="@id/clt_recent_dummy_taxes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_search_dummy_taxes_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_tax_by_owner"
+                    android:textAppearance="?textAppearanceSubtitle1"
+                    android:textColor="?colorOnSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/et_search_dummy_taxes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/enter_owner"
+                    android:importantForAutofill="no"
+                    android:inputType="textNoSuggestions"
+                    android:text="@={viewModel.searchWord}"
+                    android:textColor="?colorOnSecondary"
+                    android:textColorHint="?colorOnSecondary"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@id/bt_search_dummy_taxes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_search_dummy_taxes_title" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bt_search_dummy_taxes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.searchTaxesByTicker()}"
+                    android:text="@string/search"
+                    android:textColor="?colorOnSecondary"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/et_search_dummy_taxes"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/et_search_dummy_taxes" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recv_search_dummy_taxes_records_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_max="@dimen/list_view_max_height"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_search_dummy_taxes" />
+
+                <ImageView
+                    android:layout_width="@dimen/status_icon_size"
+                    android:layout_height="@dimen/status_icon_size"
+                    android:cropToPadding="true"
+                    android:scaleType="centerCrop"
+                    app:apiStatus="@{viewModel.statusSearchApi}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recv_search_dummy_taxes_records_list"
+                    app:tint="?colorOnPrimary"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_simplesmall_loading_512" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clt_recent_dummy_taxes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/elements_margin_medium"
+                android:background="?colorPrimary"
+                android:padding="@dimen/elements_margin_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clt_search_dummy_taxes">
+
+                <TextView
+                    android:id="@+id/tv_recent_dummy_taxes_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/elements_margin_medium"
+                    android:text="@string/latest_taxes"
+                    android:textAppearance="?textAppearanceSubtitle1"
+                    android:textColor="?colorOnSecondary"
+                    app:layout_constraintBottom_toTopOf="@id/et_recent_dummy_taxes_filter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/et_recent_dummy_taxes_filter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/filter_by_owner"
+                    android:importantForAutofill="no"
+                    android:inputType="textNoSuggestions"
+                    android:text="@={viewModel.filterWord}"
+                    android:textColor="?colorOnSecondary"
+                    android:textColorHint="?colorOnSecondary"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@id/bt_recent_dummy_taxes_filter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_recent_dummy_taxes_title" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/bt_recent_dummy_taxes_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewModel.filterLatestTaxes()}"
+                    android:text="@string/filter"
+                    android:textColor="?colorOnSecondary"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/et_recent_dummy_taxes_filter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/et_recent_dummy_taxes_filter" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recv_recent_dummy_taxes_records_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_max="@dimen/list_view_max_height"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_recent_dummy_taxes_filter" />
+
+                <ImageView
+                    android:layout_width="@dimen/status_icon_size"
+                    android:layout_height="@dimen/status_icon_size"
+                    android:cropToPadding="true"
+                    android:scaleType="centerCrop"
+                    app:apiStatus="@{viewModel.statusApi}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recv_recent_dummy_taxes_records_list"
+                    app:tint="?colorOnPrimary"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_simplesmall_loading_512" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

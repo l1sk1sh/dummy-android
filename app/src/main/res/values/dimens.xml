@@ -1,0 +1,17 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+
+    <dimen name="elements_margin_small">8dp</dimen>
+    <dimen name="elements_margin_medium">16dp</dimen>
+    <dimen name="elements_margin_huge">64dp</dimen>
+
+    <dimen name="image_size">180dp</dimen>
+    <dimen name="status_icon_size">48dp</dimen>
+    <dimen name="progress_bar_min_height">24dp</dimen>
+    <dimen name="text_block_max_height">120dp</dimen>
+    <dimen name="ads_button_height">64dp</dimen>
+    <dimen name="list_view_max_height">280dp</dimen>
+</resources>

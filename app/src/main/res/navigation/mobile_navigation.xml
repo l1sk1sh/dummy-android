@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_dummy_taxes">
+
+    <fragment
+        android:id="@+id/nav_dummy_stores"
+        android:name="com.dummy.android.ui.main.stores.DummyStoresFragment"
+        android:label="@string/menu_dummy_stores"
+        tools:layout="@layout/fragment_dummy_stores" />
+    <fragment
+        android:id="@+id/nav_dummy_socials"
+        android:name="com.dummy.android.ui.main.socials.DummySocialsFragment"
+        android:label="@string/menu_dummy_socials"
+        tools:layout="@layout/fragment_dummy_socials" />
+    <fragment
+        android:id="@+id/nav_dummy_taxes"
+        android:name="com.dummy.android.ui.main.taxes.DummyTaxesFragment"
+        android:label="@string/menu_dummy_taxes"
+        tools:layout="@layout/fragment_dummy_taxes">
+        <action
+            android:id="@+id/action_showDetails"
+            app:destination="@id/nav_details_dummy_taxes" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_details_dummy_taxes"
+        android:name="com.dummy.android.ui.main.taxes.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="selectedRecord"
+            app:argType="com.dummy.android.data.models.TaxRecord" />
+    </fragment>
+</navigation>

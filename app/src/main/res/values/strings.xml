@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Dummy Android</string>
+
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_billing">Billing</string>
+
+    <string name="menu_dummy_taxes">Taxes</string>
+    <string name="menu_dummy_stores">Stores</string>
+    <string name="menu_dummy_socials">Socials</string>
+
+    <string name="close">Close</string>
+
+    <string name="dummy_stores_desc">Dummy Stores section is under construction!
+        \n\nAs soon as section is ready it will include:
+        \n • This!
+        \n • And this!
+        \n • And even this!
+    </string>
+    <string name="dummy_socials">Dummy Socials section is under construction!
+        \n\nAs soon as section is ready it will include:
+        \n • This!
+        \n • And this!
+        \n • And even this!
+    </string>
+    <string name="under_construction">Nothing is ready! Want to support? Just be around!</string>
+
+    <string name="ads">Want some more?</string>
+
+    <string name="no_internet">Connect to the internet and try again</string>
+    <string name="cannot_be_blank">Field cannot be blank</string>
+    <string name="no_records_found">No records found</string>
+
+    <string name="owner">owner</string>
+    <string name="client">client</string>
+    <string name="issue">issue</string>
+    <string name="amount">amount</string>
+    <string name="date">date</string>
+    <string name="specific">specific</string>
+    <string name="details">details</string>
+
+    <string name="filter_by_owner">Filter by owner</string>
+    <string name="latest_taxes">Latest taxes</string>
+    <string name="enter_owner">Enter owner</string>
+    <string name="search_tax_by_owner">Search tax by owner</string>
+    <string name="filter">Filter</string>
+    <string name="search">Search</string>
+</resources>
